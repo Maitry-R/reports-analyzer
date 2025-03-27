@@ -15,7 +15,21 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    footer:before {
+        content:''; 
+        display:block;
+        height: 5px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.markdown("""
 <style>
     .main-header {
@@ -75,6 +89,7 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
 
 # Load CSV file
 def load_csv(uploaded_file):
